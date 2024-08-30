@@ -1,0 +1,46 @@
+.ulist {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.li {
+  float: left;
+}
+
+.list {
+  display: flex;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 50px;
+  margin-top: 30px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-family: Futura PT Web Heavy, sans-serif;
+}
+
+.li a:hover {
+  color: gray;
+}
+
+.wrapper {
+  display: flex;
+  pointer-events: none;
+  margin-right: 1000px;
+  margin-left: 120px;
+}
+
+.img {
+  display: flex;
+  width: 10rem;
+  height: 8rem;
+  object-fit: contain;
+  pointer-events: all;
+}
