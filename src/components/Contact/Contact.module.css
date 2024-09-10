@@ -1,13 +1,13 @@
+.h1 {
+  text-align: center;
+  font-size: 70px;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
 .main {
   margin: auto;
   text-align: center;
 
-  h1 {
-    font-size: 70px;
-    text-transform: uppercase;
-
-    margin-bottom: 5rem;
-  }
   p {
     margin-bottom: 5rem;
   }
@@ -75,6 +75,13 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .h1 {
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    margin-top: 7%;
+  }
   .input {
     display: inline-block;
     margin: auto;

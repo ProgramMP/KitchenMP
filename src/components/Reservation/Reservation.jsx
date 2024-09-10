@@ -4,7 +4,7 @@ import fork from "../../assets/fork.png";
 export default function Reservation() {
   return (
     <>
-      <h1>Reservation</h1>
+      <h1 className={classes.h1}>Reservation</h1>
       <main className={classes.main}>
         <form>
           <div className={classes.form}>
