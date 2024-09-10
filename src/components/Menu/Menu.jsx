@@ -1,6 +1,7 @@
 import MenuItems from "./MenuItems";
-import ErrorBlock from "./UI/ErrorBlock";
-import useHttp from "../hooks/useHttp";
+import ErrorBlock from "../UI/ErrorBlock";
+import useHttp from "../../hooks/useHttp";
+import classes from "./Menu.module.css";
 
 const requestConfig = {};
 
@@ -20,7 +21,7 @@ export default function Menu() {
   }
 
   return (
-    <div id="meals">
+    <div className={classes.meals}>
       {loadedMeals.map((meals) => (
         <MenuItems key={meals.id} meal={meals}></MenuItems>
       ))}

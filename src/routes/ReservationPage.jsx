@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import Contact from "../components/Contact/Contact";
+import Reservation from "../components/Reservation/Reservation";
 
-export default function ContactPage() {
+export default function ReservationPage() {
   window.scrollTo(0, 0);
   return (
     <>
       <Outlet />
       <main>
-        <Contact />
+        <Reservation />
       </main>
     </>
   );

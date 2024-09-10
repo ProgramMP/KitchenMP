@@ -26,6 +26,7 @@ export function UserProgressContextProvider({ children }) {
   function hideCheckout() {
     setUserProgress("");
   }
+
   const userProgressCtx = {
     progresss: userProgress,
     showCart,

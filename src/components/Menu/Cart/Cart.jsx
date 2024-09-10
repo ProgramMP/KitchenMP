@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import Modal from "./UI/Modal";
-import CartContext from "../Store/CartContext";
-import { currencyFormatter } from "../util/formatting";
-import Button from "./UI/Button";
-import { UserProgressContext } from "../Store/UserProgressContext";
+import Modal from "../../UI/Modal";
+import CartContext from "../../../Store/CartContext";
+import { currencyFormatter } from "../../../util/formatting";
+import Button from "../../UI/Button";
+import { UserProgressContext } from "../../../Store/UserProgressContext";
 import CartItem from "./CartItem";
+import classes from "./Cart.module.css";
 
 export default function Cart() {
   const cartCtx = useContext(CartContext);
@@ -25,8 +26,7 @@ export default function Cart() {
 
   return (
     <Modal
-      style={{ color: "red" }}
-      className="cart"
+      className={classes.cart}
       open={userProgressCtx.progresss === "cart"}
       onClose={userProgressCtx.progresss === "cart" ? handleCloseCart : null}
     >
@@ -43,14 +43,14 @@ export default function Cart() {
           />
         ))}
       </ul>
-      <p className="cart-total">{currencyFormatter.format(cartTotal)}</p>
-      <p className="modal-actions">
-        <Button textOnly onClick={handleCloseCart}>
+      <p className={classes.total}>{currencyFormatter.format(cartTotal)}</p>
+      <p className={classes.actions}>
+        <button className={classes.button} onClick={handleCloseCart}>
           Close
-        </Button>
+        </button>
         {cartCtx.items.length > 0 && (
           <Button onClick={handleGoToChekout}>Go to Checkout</Button>
-        )}{" "}
+        )}
       </p>
     </Modal>
   );

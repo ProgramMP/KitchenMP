@@ -1,0 +1,73 @@
+.item {
+  background-color: #000000;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.75rem 0;
+}
+
+.description {
+  margin: 1rem;
+}
+
+.price {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.actions {
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  color: #000000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.button:hover,
+.button:active {
+  background-color: #000000;
+  border-color: gray;
+  color: #ffffff;
+}
+
+svg {
+  display: inline-block;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,131 @@
+h1 {
+  text-align: center;
+  font-size: 70px;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+.main {
+  margin-left: 10%;
+  float: left;
+  margin-bottom: 5rem;
+  .form {
+    display: grid;
+    column-gap: 30rem;
+    grid-template-columns: repeat(auto-fill, minmax(0px, 0px));
+
+    p {
+      label {
+        width: 10rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: flex;
+      }
+
+      input,
+      select {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1.3rem 1.2rem 1.3rem !important;
+        border-radius: 4px;
+        border: 1px solid #000000;
+        font-family: Futura, sans-serif;
+        background-color: transparent;
+        font-size: 16px;
+        margin-bottom: 1rem;
+        color: #000000;
+        width: 280px;
+        -ms-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+      }
+    }
+  }
+  .comments {
+    display: grid;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: flex;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.textarea {
+  width: 760px;
+  height: 130px;
+  padding: 1.3rem 1.2rem 1.3rem !important;
+  margin-right: 5%;
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  font-family: Futura, sans-serif;
+  background-color: transparent;
+  font-size: 16px;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 40%;
+  text-transform: uppercase;
+  background-color: #000000;
+  border: 1px solid gray;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 4px;
+}
+.button:hover,
+.button:active {
+  background-color: #ffffff;
+  border-color: gray;
+  color: #000000;
+}
+
+.img {
+  margin-left: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .textarea {
+    width: 130%;
+    height: 130px;
+    padding: 1.3rem 1.2rem 1.3rem !important;
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #000000;
+    font-family: Futura, sans-serif;
+    background-color: transparent;
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: #000000;
+  }
+
+  .button {
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    background-color: #000000;
+    border: 1px solid gray;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+  }
+  .button:hover,
+  .button:active {
+    background-color: #ffffff;
+    border-color: gray;
+    color: #000000;
+  }
+}

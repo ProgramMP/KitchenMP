@@ -1,12 +1,15 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+}
+
 .ulist {
-  position: fixed;
-  top: 0;
   width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #000000;
+  background-color: #ffffff00;
 }
 
 .li {
@@ -14,10 +17,11 @@
 }
 
 .list {
-  display: flex;
-  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  color: rgb(255, 255, 255);
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 20px;
   margin-right: 50px;
   margin-top: 30px;
@@ -27,20 +31,83 @@
 }
 
 .li a:hover {
-  color: gray;
+  color: gray(255, 255, 255);
 }
 
 .wrapper {
   display: flex;
   pointer-events: none;
-  margin-right: 1000px;
+  margin-right: 0px;
   margin-left: 120px;
 }
 
 .img {
   display: flex;
+  margin-right: auto;
   width: 10rem;
   height: 8rem;
   object-fit: contain;
   pointer-events: all;
+}
+
+@media only screen and (min-width: 1300px) {
+  .smenu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .ulist {
+    display: none;
+  }
+
+  .smenu {
+    float: left;
+    margin: 0;
+    padding-right: 0;
+    list-style: none;
+  }
+
+  .alist {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-family: Futura PT Web Heavy, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .button {
+    float: left;
+    width: 30px;
+    display: block;
+    margin: 1em 0 0 1em;
+    height: 2rem;
+    div {
+      height: 4px;
+      background-color: rgb(255, 255, 255);
+      margin: 5px 0;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+    .one {
+      width: 30px;
+    }
+    .two {
+      width: 20px;
+    }
+    .three {
+      width: 25px;
+    }
+  }
+
+  .button:hover div {
+    width: 30px;
+  }
+
+  .wrapper {
+    margin-left: auto;
+    margin-top: 0;
+    padding-right: 4rem;
+  }
 }

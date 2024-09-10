@@ -1,10 +1,8 @@
-export default function Button({ children, textOnly, className, ...props }) {
-  const cssClasses = textOnly
-    ? `text-button ${className}`
-    : `button ${className}`;
+import classes from "./Button.module.css";
 
+export default function Button({ children, ...props }) {
   return (
-    <button className={cssClasses} {...props}>
+    <button className={classes.button} {...props}>
       {children}
     </button>
   );

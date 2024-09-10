@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import Button from "../components/UI/Button";
-import CartContext from "../Store/CartContext";
-import { UserProgressContext } from "../Store/UserProgressContext";
+import CartContext from "../../../Store/CartContext";
+import { UserProgressContext } from "../../../Store/UserProgressContext";
+import classes from "./CartButton.module.css";
 
 export default function CartButton() {
   const cartCtx = useContext(CartContext);
@@ -16,10 +16,8 @@ export default function CartButton() {
   }
 
   return (
-    <header id="main-header">
-      <Button textOnly onClick={handleShowCart}>
-        Cart ({totalCartItems})
-      </Button>
-    </header>
+    <button className={classes.button} onClick={handleShowCart}>
+      Cart ({totalCartItems})
+    </button>
   );
 }
