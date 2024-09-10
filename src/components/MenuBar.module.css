@@ -35,7 +35,7 @@
 }
 
 .wrapper {
-  display: flex;
+  display: block;
   pointer-events: none;
   margin-right: 0px;
   margin-left: 120px;
@@ -108,6 +108,6 @@
   .wrapper {
     margin-left: auto;
     margin-top: 0;
-    padding-right: 4rem;
+    padding-right: 0;
   }
 }
