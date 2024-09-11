@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Store/index.js";
@@ -10,6 +9,7 @@ import MenuPage from "./routes/MenuPage.jsx";
 import ContactPage from "./routes/ContactPage.jsx";
 import ReservationPage from "./routes/ReservationPage.jsx";
 import ErrorPage from "./routes/ErrorPage.jsx";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
