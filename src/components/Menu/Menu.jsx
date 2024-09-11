@@ -1,6 +1,6 @@
+import useHttp from "../../hooks/useHttp";
 import MenuItems from "./MenuItems";
 import ErrorBlock from "../UI/ErrorBlock";
-import useHttp from "../../hooks/useHttp";
 import classes from "./Menu.module.css";
 
 const requestConfig = {};

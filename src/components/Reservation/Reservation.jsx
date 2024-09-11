@@ -1,5 +1,4 @@
 import classes from "./Reservation.module.css";
-import fork from "../../assets/fork.png";
 
 export default function Reservation() {
   return (

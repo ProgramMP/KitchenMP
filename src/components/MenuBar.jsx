@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/KitchenLogo1.jpg";
 import classes from "./MenuBar.module.css";
-import { useEffect, useState } from "react";
 
 export default function MenuBar() {
   const [isMenu, setIsMenu] = useState(null);

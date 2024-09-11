@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import restourant from "../../assets/restourant.jpg";
 import steak from "../../assets/steak-frites.jpg";
 import reservation from "../../assets/reservation.jpg";
 import classes from "./HomePage.module.css";
-import { Link } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function HomePage() {
   return (

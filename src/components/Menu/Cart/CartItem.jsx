@@ -1,5 +1,6 @@
 import { currencyFormatter } from "../../../util/formatting";
 import classes from "./CartItem.module.css";
+
 export default function CartItem({
   name,
   quantity,

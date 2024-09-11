@@ -45,7 +45,7 @@ app.post("/orders", async (req, res) => {
     });
   }
 
-  orderData.customer["postal-code"] = 12345;
+  orderData.customer["postal-code"] = 5800;
   orderData.customer.city = "Pleven";
 
   const newOrder = {

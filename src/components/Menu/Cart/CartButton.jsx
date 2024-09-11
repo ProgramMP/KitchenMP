@@ -1,18 +1,17 @@
-import { useContext } from "react";
-import CartContext from "../../../Store/CartContext";
-import { UserProgressContext } from "../../../Store/UserProgressContext";
+import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../../../Store/UserProgressContext";
 import classes from "./CartButton.module.css";
 
 export default function CartButton() {
-  const cartCtx = useContext(CartContext);
-  const userProgressCtx = useContext(UserProgressContext);
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.cart.items);
 
-  const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
+  const totalCartItems = items.reduce((totalNumberOfItems, item) => {
     return totalNumberOfItems + item.quantity;
   }, 0);
 
   function handleShowCart() {
-    userProgressCtx.showCart();
+    dispatch(uiActions.showCart());
   }
 
   return (
