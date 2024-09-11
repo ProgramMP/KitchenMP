@@ -10,35 +10,46 @@ export default function MenuBar() {
   function handleOpenMenu() {
     setIsMenu((past) => !past);
   }
-  console.log(isMenu);
   useEffect(() => {
     if (isMenu) {
       setMenu(
         <ul className={classes.smenu}>
           <p>
             <li>
-              <Link to="/" className={classes.alist}>
+              <Link onClick={handleOpenMenu} to="/" className={classes.alist}>
                 Abous us
               </Link>
             </li>
           </p>
           <p>
             <li>
-              <Link to="/menu" className={classes.alist}>
+              <Link
+                onClick={handleOpenMenu}
+                to="/menu"
+                className={classes.alist}
+              >
                 Menu
               </Link>
             </li>
           </p>
           <p>
             <li>
-              <Link to="/reservation" className={classes.alist}>
+              <Link
+                onClick={handleOpenMenu}
+                to="/reservation"
+                className={classes.alist}
+              >
                 Reservation
               </Link>
             </li>
           </p>
           <p>
             <li>
-              <Link to="/contact" className={classes.alist}>
+              <Link
+                onClick={handleOpenMenu}
+                to="/contact"
+                className={classes.alist}
+              >
                 Contact Us
               </Link>
             </li>
@@ -54,15 +65,15 @@ export default function MenuBar() {
 
   return (
     <>
-      <div>
-        <a onClick={handleOpenMenu} className={classes.button}>
-          <div className={classes.one}></div>
-          <div className={classes.two}></div>
-          <div className={classes.three}></div>
-        </a>
-        <div>{menu}</div>
-      </div>
       <main className={classes.main}>
+        <div className={classes.nothing}>
+          <a onClick={handleOpenMenu} className={classes.button}>
+            <div className={classes.one}></div>
+            <div className={classes.two}></div>
+            <div className={classes.three}></div>
+          </a>
+          <div>{menu}</div>
+        </div>
         <Link className={classes.wrapper}>
           <img className={classes.img} src={logo} alt="A restaurant" />
         </Link>

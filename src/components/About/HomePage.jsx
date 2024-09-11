@@ -15,13 +15,11 @@ export default function HomePage() {
       <main className={classes.main}>
         <LazyLoadImage src={restourant} alt="restourant" />
         <p>
-          Welcome to KitchenMP, a newly established restaurant located in
-          Pleven. We offer a diverse selection of mouth-watering dishes that are
-          sure to delight your palate. Our inviting atmosphere, coupled with the
-          dedication and hard work of our entire team, is focused on ensuring
-          the complete satisfaction of every customer. Thank you for choosing
-          us. We would be delighted to serve you through our online menu or
-          warmly welcome you in person at our restaurant.
+          Welcome to KitchenMP, a newly established restaurant in Pleven. We
+          offer a diverse selection of delicious dishes, crafted to satisfy
+          every palate. Our inviting atmosphere and dedicated team are committed
+          to ensuring your complete satisfaction. We look forward to serving
+          you, whether through our online menu or in person.
         </p>
       </main>
       <main className={classes.menu}>
