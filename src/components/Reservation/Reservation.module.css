@@ -192,18 +192,16 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
-    margin-bottom: 5rem;
+    width: 90%;
+    margin-bottom: 3rem;
 
+    padding-left: 1rem;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
     .form {
-      display: grid;
-      padding-left: 1rem;
-      grid-template-columns: repeat(2, minmax(50%, 0%));
-      justify-content: space-evenly;
-      justify-items: center;
-      align-content: space-evenly;
-      align-items: center;
-
+      display: block;
       p {
         label {
           width: 10rem;
@@ -220,10 +218,8 @@
           border: 1px solid #ffffff;
           font-family: Futura, sans-serif;
           background-color: white;
-          padding-left: 0.1rem !important;
-          padding-top: 0.2rem !important;
-          padding-bottom: 0.2rem !important;
-          padding-right: 0 !important;
+          padding: 1.3rem 1.2rem 1.3rem;
+
           font-size: 16px;
           margin-bottom: 1rem;
           color: #000000;
@@ -236,10 +232,8 @@
     }
     .comments {
       label {
-        width: 75%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        width: 10rem;
         font-weight: bold;
         margin-bottom: 0.5rem;
       }
@@ -247,6 +241,7 @@
 
     .textarea {
       width: 80%;
+      margin-left: 0;
       height: 130px;
       padding: 1.3rem 1.2rem 1.3rem !important;
       font: inherit;
