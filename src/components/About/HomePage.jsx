@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <header>
-        <h1 className={classes.h1}>Welcome to KitchenMP</h1>
+        <h1 className={classes.h1}>Welcome To KitchenMP</h1>
       </header>
 
       <main className={classes.main}>

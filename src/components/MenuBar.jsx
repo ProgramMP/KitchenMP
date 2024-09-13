@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/KitchenLogo1.jpg";
 import classes from "./MenuBar.module.css";
 
@@ -10,48 +10,61 @@ export default function MenuBar() {
   function handleOpenMenu() {
     setIsMenu((past) => !past);
   }
+
   useEffect(() => {
     if (isMenu) {
       setMenu(
         <ul className={classes.smenu}>
           <p>
             <li>
-              <Link onClick={handleOpenMenu} to="/" className={classes.alist}>
+              <NavLink
+                onClick={handleOpenMenu}
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? classes.listSandwichActive : classes.listSandwich
+                }
+              >
                 Abous us
-              </Link>
+              </NavLink>
             </li>
           </p>
           <p>
             <li>
-              <Link
+              <NavLink
                 onClick={handleOpenMenu}
                 to="/menu"
-                className={classes.alist}
+                className={({ isActive }) =>
+                  isActive ? classes.listSandwichActive : classes.listSandwich
+                }
               >
                 Menu
-              </Link>
+              </NavLink>
             </li>
           </p>
           <p>
             <li>
-              <Link
+              <NavLink
                 onClick={handleOpenMenu}
                 to="/reservation"
-                className={classes.alist}
+                className={({ isActive }) =>
+                  isActive ? classes.listSandwichActive : classes.listSandwich
+                }
               >
                 Reservation
-              </Link>
+              </NavLink>
             </li>
           </p>
           <p>
             <li>
-              <Link
+              <NavLink
                 onClick={handleOpenMenu}
                 to="/contact"
-                className={classes.alist}
+                className={({ isActive }) =>
+                  isActive ? classes.listSandwichActive : classes.listSandwich
+                }
               >
                 Contact Us
-              </Link>
+              </NavLink>
             </li>
           </p>
         </ul>
@@ -66,45 +79,72 @@ export default function MenuBar() {
   return (
     <>
       <main className={classes.main}>
+        <a></a>
         <div className={classes.nothing}>
-          <a onClick={handleOpenMenu} className={classes.button}>
+          <a
+            onClick={handleOpenMenu}
+            className={menu ? classes.buttonChange : classes.button}
+          >
             <div className={classes.one}></div>
             <div className={classes.two}></div>
             <div className={classes.three}></div>
           </a>
           <div>{menu}</div>
+          <Link className={classes.wrapper}>
+            <img className={classes.img} src={logo} alt="A logo" />
+          </Link>
         </div>
-        <Link className={classes.wrapper}>
-          <img className={classes.img} src={logo} alt="A restaurant" />
-        </Link>
         <ul className={classes.ulist}>
-          <li className={classes.li}></li>
+          <p></p>
           <p>
+            <Link className={classes.wrapper}>
+              <img className={classes.img} src={logo} alt="A logo" />
+            </Link>
             <li className={classes.li}>
-              <Link className={classes.list} to="/">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? classes.listActive : classes.list
+                }
+                to="/"
+              >
                 Abous us
-              </Link>
+              </NavLink>
             </li>
           </p>
           <p>
             <li className={classes.li}>
-              <Link className={classes.list} to="/menu">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? classes.listActive : classes.list
+                }
+                to="/menu"
+              >
                 Menu
-              </Link>
+              </NavLink>
             </li>
           </p>
           <p>
             <li className={classes.li}>
-              <Link className={classes.list} to="/reservation">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? classes.listActive : classes.list
+                }
+                to="/reservation"
+              >
                 Reservation
-              </Link>
+              </NavLink>
             </li>
           </p>
           <p>
             <li className={classes.li}>
-              <Link className={classes.list} to="/contact">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? classes.listActive : classes.list
+                }
+                to="/contact"
+              >
                 Contact Us
-              </Link>
+              </NavLink>
             </li>
           </p>
         </ul>
