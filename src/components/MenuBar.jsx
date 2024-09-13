@@ -83,7 +83,7 @@ export default function MenuBar() {
         <div className={classes.nothing}>
           <a
             onClick={handleOpenMenu}
-            className={menu ? classes.buttonChange : classes.button}
+            className={isMenu ? classes.buttonChange : classes.button}
           >
             <div className={classes.one}></div>
             <div className={classes.two}></div>
@@ -91,7 +91,12 @@ export default function MenuBar() {
           </a>
           <div>{menu}</div>
           <Link className={classes.wrapper}>
-            <img className={classes.img} src={logo} alt="A logo" />
+            <img
+              onClick={isMenu ? handleOpenMenu : null}
+              className={classes.img}
+              src={logo}
+              alt="A logo"
+            />
           </Link>
         </div>
         <ul className={classes.ulist}>

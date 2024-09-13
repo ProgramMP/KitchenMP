@@ -198,7 +198,7 @@
     .form {
       display: grid;
       padding-left: 1rem;
-      grid-template-columns: repeat(2, minmax(20%, 0%));
+      grid-template-columns: repeat(2, minmax(50%, 0%));
       justify-content: space-evenly;
       justify-items: center;
       align-content: space-evenly;
@@ -220,9 +220,9 @@
           border: 1px solid #ffffff;
           font-family: Futura, sans-serif;
           background-color: white;
-          padding-left: 0.5rem !important;
-          padding-top: 0.5rem !important;
-          padding-bottom: 0.5rem !important;
+          padding-left: 0.1rem !important;
+          padding-top: 0.2rem !important;
+          padding-bottom: 0.2rem !important;
           padding-right: 0 !important;
           font-size: 16px;
           margin-bottom: 1rem;
@@ -246,7 +246,7 @@
     }
 
     .textarea {
-      width: 70%;
+      width: 80%;
       height: 130px;
       padding: 1.3rem 1.2rem 1.3rem !important;
       font: inherit;
