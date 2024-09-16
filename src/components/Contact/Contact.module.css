@@ -22,6 +22,10 @@
   }
 }
 
+.fetch {
+  color: #000000;
+}
+
 .input {
   display: inline-block;
   margin: auto;

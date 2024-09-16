@@ -40,8 +40,7 @@ app.post("/orders", async (req, res) => {
     orderData.customer.street.trim() === ""
   ) {
     return res.status(400).json({
-      message:
-        "Missing data: Email, name, street, postal code or city is missing.",
+      message: "Missing data: Email, name or street is missing.",
     });
   }
 
@@ -57,6 +56,70 @@ app.post("/orders", async (req, res) => {
   allOrders.push(newOrder);
   await fs.writeFile("./data/orders.json", JSON.stringify(allOrders));
   res.status(201).json({ message: "Order created!" });
+});
+
+app.post("/contacts", async (req, res) => {
+  const contactData = req.body.contact;
+
+  if (
+    contactData.customer.email === null ||
+    !contactData.customer.email.includes("@") ||
+    contactData.customer.name === null ||
+    contactData.customer.name.trim() === "" ||
+    contactData.customer.message === null ||
+    contactData.customer.message.trim() === ""
+  ) {
+    return res.status(400).json({
+      message: "Missing data: Email, name or message is missing.",
+    });
+  }
+
+  const newcontact = {
+    ...contactData,
+    id: (Math.random() * 1000).toString(),
+  };
+
+  const contacts = await fs.readFile("./data/contacts.json", "utf8");
+  const allcontacts = JSON.parse(contacts);
+  allcontacts.push(newcontact);
+  await fs.writeFile("./data/contacts.json", JSON.stringify(allcontacts));
+  res.status(201).json({ message: "Contact created!" });
+});
+
+/////////////////////////////////////////////////////////////////
+app.post("/reservations", async (req, res) => {
+  const reservationData = req.body.reservation;
+
+  if (
+    reservationData.customer.firstName === null ||
+    reservationData.customer.firstName.trim() === "" ||
+    reservationData.customer.lastName === null ||
+    reservationData.customer.lastName.trim() === "" ||
+    reservationData.customer.email === null ||
+    !reservationData.customer.email.includes("@") ||
+    reservationData.customer.people === null ||
+    reservationData.customer.people.trim() === "" ||
+    reservationData.customer.time === null ||
+    reservationData.customer.time.trim() === ""
+  ) {
+    return res.status(400).json({
+      message: "Missing data: Email, name or message is missing.",
+    });
+  }
+
+  const newreservation = {
+    ...reservationData,
+    id: (Math.random() * 1000).toString(),
+  };
+
+  const reservations = await fs.readFile("./data/reservations.json", "utf8");
+  const allreservations = JSON.parse(reservations);
+  allreservations.push(newreservation);
+  await fs.writeFile(
+    "./data/reservations.json",
+    JSON.stringify(allreservations)
+  );
+  res.status(201).json({ message: "Reservation created!" });
 });
 
 app.use((req, res) => {

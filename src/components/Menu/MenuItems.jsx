@@ -16,7 +16,7 @@ export default function MenuItems({ meal }) {
       <article className={classes.article}>
         <img
           className={classes.img}
-          src={`http://localhost:3000/${meal.image}`}
+          src={`https://backend-kitchen.onrender.com/${meal.image}`}
           alt={meal.name}
         />
         <div>

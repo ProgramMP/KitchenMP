@@ -1,5 +1,12 @@
 import classes from "./Reservation.module.css";
 
+const requestConfig = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+
 export default function Reservation() {
   return (
     <>
@@ -25,8 +32,8 @@ export default function Reservation() {
             </p>
             <p>
               <label>Number of People</label>
-              <select type="select" required>
-                <option value selected disabled></option>
+              <select type="select" required defaultValue={"DEFAULT"}>
+                <option value="DEFAULT" disabled></option>
                 <option value="1">1 Person</option>
                 <option value="2">2 People</option>
                 <option value="3">3 People</option>
@@ -40,8 +47,8 @@ export default function Reservation() {
             </p>
             <p>
               <label>Time</label>
-              <select type="select" required>
-                <option value selected disabled></option>
+              <select type="select" required defaultValue={"DEFAULT"}>
+                <option value="DEFAULT" disabled></option>
                 <option value="2300">11:00 PM</option>
                 <option value="2230">10:30 PM</option>
                 <option value="2200">10:00 PM</option>
