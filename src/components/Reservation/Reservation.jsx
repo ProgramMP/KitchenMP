@@ -70,6 +70,15 @@ export default function Reservation() {
     );
   }
 
+  if (data && !error) {
+    actions = (
+      <>
+        <span className={classes.fetch}>Success!</span>;
+        <button className={classes.button}>Book a table</button>
+      </>
+    );
+  }
+
   return (
     <>
       <h1 className={classes.h1}>Reservation</h1>

@@ -58,6 +58,15 @@ export default function Contact() {
     );
   }
 
+  if (data && !error) {
+    actions = (
+      <div>
+        <span className={classes.fetch}>Success!</span>
+        <button className={classes.button}>Submit</button>
+      </div>
+    );
+  }
+
   return (
     <>
       <h1 className={classes.h1}>Contact</h1>
