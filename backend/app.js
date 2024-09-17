@@ -97,13 +97,14 @@ app.post("/reservations", async (req, res) => {
     reservationData.customer.lastName.trim() === "" ||
     reservationData.customer.email === null ||
     !reservationData.customer.email.includes("@") ||
+    reservationData.customer.date === "" ||
+    reservationData.customer.people === "" ||
     reservationData.customer.people === null ||
-    reservationData.customer.people.trim() === "" ||
-    reservationData.customer.time === null ||
-    reservationData.customer.time.trim() === ""
+    reservationData.customer.time === "" ||
+    reservationData.customer.time === null
   ) {
     return res.status(400).json({
-      message: "Missing data: Email, name or message is missing.",
+      message: "Missing data: Email, name, date, people or time is missing.",
     });
   }
 

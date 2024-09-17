@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import useHttp from "../../hooks/useHttp";
+import ErrorBlock from "../UI/ErrorBlock";
 import classes from "./Reservation.module.css";
 
 const requestConfig = {
@@ -8,32 +11,120 @@ const requestConfig = {
 };
 
 export default function Reservation() {
+  const firstName = useRef();
+  const lastName = useRef();
+  const email = useRef();
+  const date = useRef();
+  const people = useRef();
+  const time = useRef();
+  const comment = useRef();
+
+  const {
+    data,
+    isLoading: isSending,
+    error,
+    sendRequest,
+  } = useHttp("http://localhost:3000/reservations", requestConfig);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const fd = new FormData(event.target);
+    const customerData = Object.fromEntries(fd.entries());
+
+    sendRequest(
+      JSON.stringify({
+        reservation: {
+          customer: customerData,
+        },
+      })
+    );
+
+    firstName.current.value = "";
+    lastName.current.value = "";
+    email.current.value = "";
+    date.current.value = "";
+    people.current.value = "";
+    time.current.value = "";
+    comment.current.value = "";
+  }
+
+  let actions = (
+    <>
+      <button className={classes.button}>Book a table</button>
+    </>
+  );
+
+  if (isSending) {
+    actions = <span className={classes.fetch}>Sending order data...</span>;
+  }
+  if (error) {
+    actions = (
+      <div className={classes.fetch}>
+        <ErrorBlock title="Failed to submit order" message={error} />
+        <button className={classes.button}>Try Again</button>
+      </div>
+    );
+  }
+
   return (
     <>
       <h1 className={classes.h1}>Reservation</h1>
       <main className={classes.main}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={classes.form}>
             <p>
-              <label>First Name</label>
-              <input type="text" required />
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                ref={firstName}
+                required
+              />
             </p>
             <p>
-              <label>Last Name</label>
-              <input type="text" required />
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                ref={lastName}
+                required
+              />
             </p>
             <p>
-              <label>E-Mail Address</label>
-              <input type="email" required />
+              <label htmlFor="email">E-Mail Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                ref={email}
+                required
+              />
             </p>
             <p>
-              <label>Date</label>
-              <input type="date" required />
+              <label htmlFor="date">Date</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                defaultValue={""}
+                ref={date}
+                required
+              />
             </p>
             <p>
-              <label>Number of People</label>
-              <select type="select" required defaultValue={"DEFAULT"}>
-                <option value="DEFAULT" disabled></option>
+              <label htmlFor="people">Number of People</label>
+              <select
+                type="select"
+                id="people"
+                name="people"
+                ref={people}
+                required
+                defaultValue={""}
+              >
+                <option value="" hidden></option>
                 <option value="1">1 Person</option>
                 <option value="2">2 People</option>
                 <option value="3">3 People</option>
@@ -46,9 +137,16 @@ export default function Reservation() {
               </select>
             </p>
             <p>
-              <label>Time</label>
-              <select type="select" required defaultValue={"DEFAULT"}>
-                <option value="DEFAULT" disabled></option>
+              <label htmlFor="time">Time</label>
+              <select
+                type="select"
+                id="time"
+                name="time"
+                ref={time}
+                required
+                defaultValue={""}
+              >
+                <option value="" hidden></option>
                 <option value="2300">11:00 PM</option>
                 <option value="2230">10:30 PM</option>
                 <option value="2200">10:00 PM</option>
@@ -86,10 +184,16 @@ export default function Reservation() {
             </p>
           </div>
           <p className={classes.comments}>
-            <label>Comments (optional)</label>
-            <textarea className={classes.textarea} type="text" />
+            <label htmlFor="comments">Comments (optional)</label>
+            <textarea
+              className={classes.textarea}
+              id="comments"
+              name="comments"
+              type="text"
+              ref={comment}
+            />
           </p>
-          <button className={classes.button}>Book a table</button>
+          {actions}
         </form>
       </main>
     </>

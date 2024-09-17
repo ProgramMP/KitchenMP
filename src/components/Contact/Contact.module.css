@@ -26,6 +26,10 @@
   color: #000000;
 }
 
+.error {
+  margin-top: -2rem;
+}
+
 .input {
   display: inline-block;
   margin: auto;

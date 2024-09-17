@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import useHttp from "../../hooks/useHttp";
 import ErrorBlock from "../UI/ErrorBlock";
 import classes from "./Contact.module.css";
@@ -11,9 +11,9 @@ const requestConfig = {
 };
 
 export default function Contact() {
-  const [txt, setTxt] = useState("");
-  const [txt2, setTxt2] = useState("");
-  const [txt3, setTxt3] = useState("");
+  const name = useRef();
+  const email = useRef();
+  const message = useRef();
   const {
     data,
     isLoading: isSending,
@@ -35,9 +35,9 @@ export default function Contact() {
       })
     );
 
-    setTxt("");
-    setTxt2("");
-    setTxt3("");
+    name.current.value = "";
+    email.current.value = "";
+    message.current.value = "";
   }
 
   let actions = (
@@ -50,7 +50,12 @@ export default function Contact() {
     actions = <span className={classes.fetch}>Sending order data...</span>;
   }
   if (error) {
-    actions = <ErrorBlock title="Failed to submit order" message={error} />;
+    actions = (
+      <div className={classes.error}>
+        <ErrorBlock title="Failed to submit order" message={error} />;
+        <button className={classes.button}>Try Again</button>
+      </div>
+    );
   }
 
   return (
@@ -67,8 +72,7 @@ export default function Contact() {
             <label htmlFor="name">Full Name</label>
             <input
               className={classes.input}
-              onChange={(event) => setTxt(event.target.value)}
-              value={txt}
+              ref={name}
               id="name"
               name="name"
               required
@@ -78,8 +82,7 @@ export default function Contact() {
             <label htmlFor="email">E-Mail Address</label>
             <input
               className={classes.input}
-              onChange={(event) => setTxt2(event.target.value)}
-              value={txt2}
+              ref={email}
               type="email"
               id="email"
               name="email"
@@ -90,8 +93,7 @@ export default function Contact() {
             <label htmlFor="message">Message</label>
             <textarea
               className={classes.textarea}
-              onChange={(event) => setTxt3(event.target.value)}
-              value={txt3}
+              ref={message}
               type="text"
               id="message"
               name="message"
