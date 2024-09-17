@@ -24,7 +24,10 @@ export default function Reservation() {
     isLoading: isSending,
     error,
     sendRequest,
-  } = useHttp("http://localhost:3000/reservations", requestConfig);
+  } = useHttp(
+    "https://backend-kitchen.onrender.com/reservations",
+    requestConfig
+  );
 
   function handleSubmit(event) {
     event.preventDefault();
