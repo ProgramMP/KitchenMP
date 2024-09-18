@@ -66,7 +66,7 @@
   .footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    padding: 2rem 2rem;
+    padding: 0;
     background-color: black;
   }
 
@@ -80,10 +80,10 @@
   }
 
   .browse {
-    margin-left: -9rem;
+    margin-left: -8rem;
   }
 
   .contact {
-    margin-left: -6.5rem;
+    margin-left: -6rem;
   }
 }
