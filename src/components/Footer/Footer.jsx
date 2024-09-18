@@ -12,7 +12,7 @@ export default function Footer() {
         <img className={classes.img} src={logo} alt="A logo" />
       </div>
       <div className={classes.browse}>
-        <h3>Browse</h3>
+        <p className={classes.header}>Browse</p>
         <ul className={classes.ul}>
           <li className={classes.listItemBrowse}>
             <NavLink
@@ -57,7 +57,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className={classes.contact}>
-        <h3>Contact</h3>
+        <p className={classes.header}>Contact</p>
         <ul className={classes.ul}>
           <li className={classes.listItemContact}>
             <img className={classes.icons} src={location}></img> Pleven,

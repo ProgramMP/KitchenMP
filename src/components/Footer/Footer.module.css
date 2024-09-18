@@ -5,6 +5,11 @@
   background-color: black;
 }
 
+.header {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .icons {
   width: 1.2rem;
   height: 1.2rem;
@@ -66,8 +71,13 @@
   .footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    padding: 0;
     background-color: black;
+    padding: 0;
+  }
+
+  .header {
+    font-size: 18px;
+    font-weight: bold;
   }
 
   .img {
@@ -80,10 +90,43 @@
   }
 
   .browse {
-    margin-left: -8rem;
+    margin-left: -7rem;
   }
 
   .contact {
-    margin-left: -6rem;
+    margin-left: -4rem;
+  }
+
+  .list {
+    color: rgb(194, 194, 194);
+    text-decoration: none;
+    font-size: 13px;
+
+    text-transform: uppercase;
+    font-family: Futura PT Web Heavy, sans-serif;
+  }
+
+  .list:hover,
+  .list:active {
+    color: gray;
+  }
+
+  .listActive {
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: Futura PT Web Heavy, sans-serif;
+  }
+
+  .listItemContact {
+    margin-bottom: 15px;
+    color: rgb(194, 194, 194);
+    font-size: 13px;
+  }
+  .icons {
+    width: 1rem;
+    height: 1rem;
   }
 }
