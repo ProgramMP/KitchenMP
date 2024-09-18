@@ -13,7 +13,7 @@ export default function Menu() {
   } = useHttp("https://backend-kitchen.onrender.com/meals", requestConfig, []);
 
   if (isLoading) {
-    return <p className="center">Fetching meals...</p>;
+    return <p className={classes.fetch}>Fetching meals...</p>;
   }
 
   if (error) {

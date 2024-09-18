@@ -2,7 +2,7 @@
   text-align: center;
   font-size: 70px;
   text-transform: uppercase;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .fetch {
@@ -19,8 +19,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   background-color: black;
   margin-bottom: 3rem;
   border-radius: 1rem;
@@ -65,7 +65,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 92%;
+      width: 72%;
       font-weight: bold;
 
       font-weight: bold;
@@ -78,7 +78,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 70%;
 
   height: 130px;
   padding: 1.3rem 1.2rem 1.3rem;

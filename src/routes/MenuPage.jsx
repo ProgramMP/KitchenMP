@@ -9,12 +9,12 @@ export default function MenuPage() {
   return (
     <>
       <Outlet />
-      <main>
+      <div>
         <CartButton />
         <Menu />
         <Cart />
         <Checkout />
-      </main>
+      </div>
     </>
   );
 }

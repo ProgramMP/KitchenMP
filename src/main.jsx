@@ -1,6 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Store/index.js";
 import RootLayout from "./routes/RootLayout.jsx";
@@ -14,11 +18,15 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to="/about-us" />,
+  },
+  {
+    path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "/about-us",
         element: <MainPage />,
       },
       {
@@ -30,7 +38,7 @@ const router = createBrowserRouter([
         element: <ReservationPage />,
       },
       {
-        path: "/contact",
+        path: "/contact-us",
         element: <ContactPage />,
       },
     ],

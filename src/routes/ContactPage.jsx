@@ -6,9 +6,9 @@ export default function ContactPage() {
   return (
     <>
       <Outlet />
-      <main>
+      <div>
         <Contact />
-      </main>
+      </div>
     </>
   );
 }

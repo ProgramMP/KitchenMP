@@ -7,7 +7,6 @@
 
 .ulist {
   list-style-type: none;
-
   margin-top: 0;
   padding: 0;
 }
@@ -59,7 +58,6 @@
 .img {
   width: 10rem;
   height: 8rem;
-
   object-fit: contain;
   pointer-events: all;
 }

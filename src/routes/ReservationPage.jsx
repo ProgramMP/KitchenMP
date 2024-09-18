@@ -6,9 +6,9 @@ export default function ReservationPage() {
   return (
     <>
       <Outlet />
-      <main>
+      <div>
         <Reservation />
-      </main>
+      </div>
     </>
   );
 }

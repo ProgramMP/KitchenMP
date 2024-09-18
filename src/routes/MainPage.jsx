@@ -6,9 +6,9 @@ export default function MainPage() {
   return (
     <>
       <Outlet />
-      <main>
+      <div>
         <HomePage />
-      </main>
+      </div>
     </>
   );
 }

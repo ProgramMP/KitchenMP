@@ -38,7 +38,7 @@
   grid-template-columns: repeat(2, minmax(20rem, 1fr));
   .div1 {
     margin-left: 20%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   .div2 {
     margin-left: 10%;
@@ -98,7 +98,7 @@
     }
     .div2 {
       margin: auto;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
   }
 

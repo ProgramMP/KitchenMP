@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { menuActions } from "../Store/Sandwich";
 import logo from "../assets/KitchenLogo1.jpg";
 import classes from "./MenuBar.module.css";
 
 export default function MenuBar() {
-  const [isMenu, setIsMenu] = useState(null);
+  const isMenu = useSelector((state) => state.menu.menu);
+  const dispatch = useDispatch();
+
   const [menu, setMenu] = useState();
 
   function handleOpenMenu() {
-    setIsMenu((past) => !past);
+    dispatch(menuActions.showHideMenu());
+  }
+
+  function handleCloseMenu() {
+    dispatch(menuActions.hideMenu());
   }
 
   useEffect(() => {
@@ -19,12 +27,12 @@ export default function MenuBar() {
             <li>
               <NavLink
                 onClick={handleOpenMenu}
-                to="/"
+                to="/about-us"
                 className={({ isActive }) =>
                   isActive ? classes.listSandwichActive : classes.listSandwich
                 }
               >
-                Abous us
+                About us
               </NavLink>
             </li>
           </p>
@@ -58,7 +66,7 @@ export default function MenuBar() {
             <li>
               <NavLink
                 onClick={handleOpenMenu}
-                to="/contact"
+                to="/contact-us"
                 className={({ isActive }) =>
                   isActive ? classes.listSandwichActive : classes.listSandwich
                 }
@@ -79,8 +87,11 @@ export default function MenuBar() {
   return (
     <>
       <main className={classes.main}>
-        <a></a>
-        <div className={classes.nothing}>
+        <a onClick={() => dispatch(menuActions.hideMenu())}></a>
+        <div
+          onClick={isMenu ? handleCloseMenu : null}
+          className={classes.nothing}
+        >
           <a
             onClick={handleOpenMenu}
             className={isMenu ? classes.buttonChange : classes.button}
@@ -90,15 +101,18 @@ export default function MenuBar() {
             <div className={classes.three}></div>
           </a>
           <div>{menu}</div>
-          <Link className={classes.wrapper}>
-            <img
-              onClick={isMenu ? handleOpenMenu : null}
-              className={classes.img}
-              src={logo}
-              alt="A logo"
-            />
-          </Link>
+          <div>
+            <Link className={classes.wrapper}>
+              <img
+                onClick={isMenu ? handleOpenMenu : null}
+                className={classes.img}
+                src={logo}
+                alt="A logo"
+              />
+            </Link>
+          </div>
         </div>
+
         <ul className={classes.ulist}>
           <p></p>
           <p>
@@ -110,9 +124,9 @@ export default function MenuBar() {
                 className={({ isActive }) =>
                   isActive ? classes.listActive : classes.list
                 }
-                to="/"
+                to="/about-us"
               >
-                Abous us
+                About us
               </NavLink>
             </li>
           </p>
@@ -146,7 +160,7 @@ export default function MenuBar() {
                 className={({ isActive }) =>
                   isActive ? classes.listActive : classes.list
                 }
-                to="/contact"
+                to="/contact-us"
               >
                 Contact Us
               </NavLink>
