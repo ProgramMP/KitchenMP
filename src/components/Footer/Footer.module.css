@@ -42,15 +42,17 @@
 .listItemContact {
   margin-bottom: 15px;
   color: rgb(194, 194, 194);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .list {
   color: rgb(194, 194, 194);
   text-decoration: none;
   font-size: 15px;
-
   text-transform: uppercase;
-  font-family: Futura PT Web Heavy, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .list:hover,
@@ -64,7 +66,8 @@
   text-decoration: none;
   font-size: 15px;
   text-transform: uppercase;
-  font-family: Futura PT Web Heavy, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -89,7 +92,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
     background-color: black;
-    padding: 0;
+    padding: 3rem 0;
   }
 
   .header {
