@@ -182,11 +182,56 @@
   }
 }
 
-@media (max-width: 429px) {
+@media (min-width: 320px) and (max-width: 429px) {
   .h1 {
     text-align: center;
     font-size: 40px;
     text-transform: uppercase;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+  }
+
+  .main {
+    width: 300px;
+
+    .form {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0rem, 1fr));
+      justify-items: start;
+      margin-left: 20px;
+      p {
+        label {
+          width: 100%;
+          font-size: 13px;
+        }
+
+        input,
+        select {
+          padding: 0.5rem 0.5rem 0.5rem !important;
+          font-size: 13px;
+          width: 192px;
+          margin-bottom: 0rem;
+        }
+      }
+    }
+    .textarea {
+      width: 204px;
+      font-size: 13px;
+    }
+
+    .comments {
+      margin-left: 20px;
+      font-size: 13px;
+    }
+  }
+  .button {
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .h1 {
+    font-size: 30px;
     margin-bottom: 5rem;
     margin-top: 2rem;
   }
@@ -225,16 +270,6 @@
     }
   }
   .button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: rgb(0, 0, 0);
-    border: none;
-    color: rgb(255, 255, 255);
     padding: 0.5rem 1.5rem;
-    border-radius: 4px;
   }
 }
