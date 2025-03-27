@@ -8,7 +8,7 @@ import classes from "./Footer.module.css";
 export default function Footer() {
   return (
     <footer className={classes.footer}>
-      <div>
+      <div className={classes.logo}>
         <img className={classes.img} src={logo} alt="A logo" />
       </div>
       <div className={classes.browse}>
@@ -57,7 +57,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className={classes.contact}>
-        <p className={classes.header}>Contact</p>
+        <p className={classes.header}>Contacts</p>
         <ul className={classes.ul}>
           <li className={classes.listItemContact}>
             <img className={classes.icons} src={location}></img> Pleven,

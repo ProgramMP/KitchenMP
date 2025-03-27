@@ -24,7 +24,7 @@
 }
 
 .browse {
-  margin-left: 60%;
+  margin-left: 50%;
 }
 
 .contact {
@@ -70,13 +70,9 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-@media only screen and (max-width: 1000px) {
+@media (min-width: 701px) and (max-width: 1000px) {
   .img {
-    margin-bottom: -9rem;
     padding: 0;
-    width: 10rem;
-    height: 8rem;
-    object-fit: contain;
   }
 
   .browse {
@@ -84,44 +80,86 @@
   }
 
   .contact {
-    margin-left: -1rem;
+    margin-left: -35px;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (min-width: 501px) and (max-width: 700px) {
   .footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    background-color: black;
-    padding: 3rem 0;
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
   }
-
   .header {
     font-size: 18px;
     font-weight: bold;
   }
 
-  .img {
-    margin-bottom: -9rem;
-    padding: 0;
-    width: 10rem;
-    height: 8rem;
-    object-fit: contain;
-    visibility: hidden;
+  .logo {
+    display: none;
   }
 
   .browse {
-    margin-left: -7rem;
+    margin-left: 0;
   }
 
   .contact {
-    margin-left: -4rem;
+    margin-left: 0rem;
+  }
+
+  .list {
+    font-size: 13px;
+  }
+
+  .list:hover,
+  .list:active {
+    color: gray;
+  }
+
+  .listActive {
+    font-size: 13px;
+  }
+
+  .listItemContact {
+    margin-bottom: 15px;
+    color: rgb(194, 194, 194);
+    font-size: 13px;
+  }
+  .icons {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .footer {
+    grid-template-columns: repeat(1, 230px);
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+    gap: 50px;
+  }
+
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .browse {
+    margin-left: 0rem;
+  }
+
+  .contact {
+    margin-left: 0rem;
   }
 
   .list {
     color: rgb(194, 194, 194);
     text-decoration: none;
-    font-size: 13px;
-
+    font-size: 15px;
     text-transform: uppercase;
     font-family: Futura PT Web Heavy, sans-serif;
   }
@@ -135,7 +173,7 @@
     color: gray;
     text-align: center;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     text-transform: uppercase;
     font-family: Futura PT Web Heavy, sans-serif;
   }
@@ -143,7 +181,67 @@
   .listItemContact {
     margin-bottom: 15px;
     color: rgb(194, 194, 194);
-    font-size: 13px;
+    font-size: 15px;
+  }
+  .icons {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@media (max-width: 319px) {
+  .footer {
+    grid-template-columns: repeat(1, 230px);
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+    gap: 50px;
+  }
+
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .browse {
+    margin-left: 0rem;
+  }
+
+  .contact {
+    margin-left: 0rem;
+  }
+
+  .list {
+    color: rgb(194, 194, 194);
+    text-decoration: none;
+    font-size: 80%;
+    text-transform: uppercase;
+    font-family: Futura PT Web Heavy, sans-serif;
+  }
+
+  .list:hover,
+  .list:active {
+    color: gray;
+  }
+
+  .listActive {
+    color: gray;
+    text-align: center;
+    text-decoration: none;
+    font-size: 80%;
+    text-transform: uppercase;
+    font-family: Futura PT Web Heavy, sans-serif;
+  }
+
+  .listItemContact {
+    margin-bottom: 15px;
+    color: rgb(194, 194, 194);
+    font-size: 80%;
   }
   .icons {
     width: 1rem;

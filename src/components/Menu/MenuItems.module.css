@@ -60,14 +60,3 @@
   border-color: gray;
   color: #ffffff;
 }
-
-svg {
-  display: inline-block;
-  animation: rotate 1s linear infinite;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}

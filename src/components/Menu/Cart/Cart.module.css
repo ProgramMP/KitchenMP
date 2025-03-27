@@ -1,13 +1,11 @@
-.cart {
-  h2 {
-    margin: 1rem 0;
-  }
+.cart h2 {
+  margin: 1rem 0;
+}
 
-  ul {
-    list-style: none;
-    margin: 0.5rem 0;
-    padding: 0;
-  }
+.cart ul {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
 }
 
 .actions {

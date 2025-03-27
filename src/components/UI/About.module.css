@@ -1,0 +1,141 @@
+.h2 {
+  color: black;
+  font-family: Futura PT Web Heavy, sans-serif;
+  line-height: 1.2;
+  font-size: 35px;
+  text-transform: uppercase;
+  width: 25rem;
+}
+
+.img {
+  align-items: center;
+  width: 32rem;
+  height: 27rem;
+  object-fit: cover;
+  margin: 0;
+}
+
+.p {
+  color: black;
+  margin-top: 1rem;
+  width: 25rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.a {
+  font: inherit;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.a:hover,
+.a:active {
+  background-color: rgb(255, 255, 255);
+  border-color: gray;
+  color: rgb(0, 0, 0);
+  transition: all 0.4s ease-in-out;
+}
+
+@media (min-width: 501px) and (max-width: 1300px) {
+  .area {
+    width: 400px;
+  }
+
+  .h2 {
+    color: black;
+    margin: auto;
+
+    text-align: center;
+    font-family: Futura PT Web Heavy, sans-serif;
+    line-height: 1.2;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+  }
+
+  .img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 20rem;
+    object-fit: cover;
+  }
+
+  .p {
+    margin: auto;
+    color: black;
+    margin-top: 1rem;
+
+    margin-bottom: 1rem;
+  }
+
+  .a {
+    font: inherit;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .a:hover,
+  .a:active {
+    background-color: rgb(255, 255, 255);
+    border-color: gray;
+    color: rgb(0, 0, 0);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .area {
+    width: 310px;
+    justify-content: center;
+  }
+
+  .h2 {
+    width: 300px;
+  }
+
+  .img {
+    width: 310px;
+    height: 15rem;
+  }
+
+  .p {
+    width: 310px;
+  }
+}
+
+@media (max-width: 319px) {
+  .area {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .h2 {
+    width: 100%;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .p {
+    width: 100%;
+  }
+}

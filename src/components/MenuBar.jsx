@@ -20,6 +20,17 @@ export default function MenuBar() {
   }
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) {
+        dispatch(menuActions.hideMenu());
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     if (isMenu) {
       setMenu(
         <ul className={classes.smenu}>
@@ -29,7 +40,7 @@ export default function MenuBar() {
                 onClick={handleOpenMenu}
                 to="/about-us"
                 className={({ isActive }) =>
-                  isActive ? classes.listSandwichActive : classes.listSandwich
+                  isActive ? classes.listActive : classes.list
                 }
               >
                 About us
@@ -42,7 +53,7 @@ export default function MenuBar() {
                 onClick={handleOpenMenu}
                 to="/menu"
                 className={({ isActive }) =>
-                  isActive ? classes.listSandwichActive : classes.listSandwich
+                  isActive ? classes.listActive : classes.list
                 }
               >
                 Menu
@@ -55,7 +66,7 @@ export default function MenuBar() {
                 onClick={handleOpenMenu}
                 to="/reservation"
                 className={({ isActive }) =>
-                  isActive ? classes.listSandwichActive : classes.listSandwich
+                  isActive ? classes.listActive : classes.list
                 }
               >
                 Reservation
@@ -68,7 +79,7 @@ export default function MenuBar() {
                 onClick={handleOpenMenu}
                 to="/contact-us"
                 className={({ isActive }) =>
-                  isActive ? classes.listSandwichActive : classes.listSandwich
+                  isActive ? classes.listActive : classes.list
                 }
               >
                 Contact Us
@@ -86,88 +97,74 @@ export default function MenuBar() {
 
   return (
     <>
-      <main className={classes.main}>
-        <a onClick={() => dispatch(menuActions.hideMenu())}></a>
-        <div
-          onClick={isMenu ? handleCloseMenu : null}
-          className={classes.nothing}
-        >
-          <a
+      <header className={classes.main}>
+        <a></a>
+        <div>
+          <div
             onClick={handleOpenMenu}
             className={isMenu ? classes.buttonChange : classes.button}
           >
             <div className={classes.one}></div>
             <div className={classes.two}></div>
             <div className={classes.three}></div>
-          </a>
+          </div>
           <div>{menu}</div>
+        </div>
+        <div className={classes.wrapper}>
           <div>
-            <Link className={classes.wrapper}>
-              <img
-                onClick={isMenu ? handleOpenMenu : null}
-                className={classes.img}
-                src={logo}
-                alt="A logo"
-              />
+            <Link>
+              <img className={classes.menuImg} src={logo} alt="A logo" />
             </Link>
           </div>
-        </div>
+          <div>
+            <ul className={classes.ulist}>
+              <li className={classes.li}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? classes.listActive : classes.list
+                  }
+                  to="/about-us"
+                >
+                  About us
+                </NavLink>
+              </li>
 
-        <ul className={classes.ulist}>
-          <p></p>
-          <p>
-            <Link className={classes.wrapper}>
-              <img className={classes.img} src={logo} alt="A logo" />
-            </Link>
-            <li className={classes.li}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? classes.listActive : classes.list
-                }
-                to="/about-us"
-              >
-                About us
-              </NavLink>
-            </li>
-          </p>
-          <p>
-            <li className={classes.li}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? classes.listActive : classes.list
-                }
-                to="/menu"
-              >
-                Menu
-              </NavLink>
-            </li>
-          </p>
-          <p>
-            <li className={classes.li}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? classes.listActive : classes.list
-                }
-                to="/reservation"
-              >
-                Reservation
-              </NavLink>
-            </li>
-          </p>
-          <p>
-            <li className={classes.li}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? classes.listActive : classes.list
-                }
-                to="/contact-us"
-              >
-                Contact Us
-              </NavLink>
-            </li>
-          </p>
-        </ul>
-      </main>
+              <li className={classes.li}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? classes.listActive : classes.list
+                  }
+                  to="/menu"
+                >
+                  Menu
+                </NavLink>
+              </li>
+
+              <li className={classes.li}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? classes.listActive : classes.list
+                  }
+                  to="/reservation"
+                >
+                  Reservation
+                </NavLink>
+              </li>
+
+              <li className={classes.li}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? classes.listActive : classes.list
+                  }
+                  to="/contact-us"
+                >
+                  Contact Us
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
     </>
   );
 }

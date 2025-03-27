@@ -15,6 +15,7 @@
     background-color: #000000;
     border-color: gray;
     color: #ffffff;
+    transition: all 0.4s ease-in-out;
   }
 }
 @media only screen and (max-width: 1000px) {

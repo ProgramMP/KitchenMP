@@ -1,23 +1,46 @@
 .button {
-  position: relative;
+  position: block;
   margin-top: 4%;
   font: inherit;
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   font-size: 1.5rem;
-  font-family: "Lato", sans-serif;
-  margin-left: 79vw;
+
+  margin-left: calc(1460px - (1920px - 100%) / 2);
+}
+
+.icon {
+  font-size: 2rem;
 }
 
 .button:hover,
 .button:active {
-  color: gray;
+  color: rgb(0, 0, 0);
+  transition: all 0.4s ease-in-out;
 }
 
-@media only screen and (max-width: 1500px) {
+@media (min-width: 1101px) and (max-width: 1300px) {
   .button {
-    margin-left: 80%;
+    margin-left: calc(1380px - (1920px - 100%) / 2);
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .button {
+    margin-left: calc(1200px - (1920px - 100%) / 2);
+  }
+}
+
+@media (min-width: 300px) and (max-width: 700px) {
+  .button {
+    margin-left: calc(1040px - (1920px - 100%) / 2);
+  }
+}
+
+@media (max-width: 300px) {
+  .button {
+    margin-left: 0;
   }
 }

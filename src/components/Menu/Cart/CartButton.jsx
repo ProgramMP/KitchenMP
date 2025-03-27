@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../../Store/UserProgressContext";
+import { FaShoppingCart } from "react-icons/fa";
+
 import classes from "./CartButton.module.css";
 
 export default function CartButton() {
@@ -16,7 +18,7 @@ export default function CartButton() {
 
   return (
     <button className={classes.button} onClick={handleShowCart}>
-      Cart ({totalCartItems})
+      <FaShoppingCart className={classes.icon} />({totalCartItems})
     </button>
   );
 }
