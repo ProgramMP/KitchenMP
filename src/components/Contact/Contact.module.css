@@ -3,13 +3,17 @@
   font-size: 50px;
   text-transform: uppercase;
 }
+
 .main {
   margin: auto;
   text-align: center;
+  width: 900px;
 }
+
 .main p {
   margin-bottom: 2rem;
 }
+
 .main .control {
   margin: 0.5rem 0;
   display: flex;

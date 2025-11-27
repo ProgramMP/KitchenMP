@@ -71,7 +71,7 @@ export default function Contact() {
     <>
       <h1 className={classes.h1}>Contact</h1>
       <main className={classes.main}>
-        <p className={classes.text}>
+        <p>
           For any assistance or to make a reservation, please feel free to
           contact us at +359877115125, via email at daniel.katsanski@gmail.com
           or at an address.
