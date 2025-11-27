@@ -3,7 +3,7 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(97, 97, 97);
+  background: rgba(167, 167, 167, 1);
   color: #ffffff;
   min-height: 100vh;
 }
