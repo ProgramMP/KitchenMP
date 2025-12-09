@@ -7,7 +7,7 @@
   background-size: cover;
   background-position: center;
   z-index: 9;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   filter: blur(0.5px);
 }
@@ -21,7 +21,7 @@
   opacity: 0.5;
   background-size: contain;
   z-index: -1;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .container {
