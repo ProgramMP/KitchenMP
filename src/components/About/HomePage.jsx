@@ -13,7 +13,12 @@ export default function HomePage() {
           />
           <div className={headerClasses.heroOverlay} />
           <div className={headerClasses.headerContent}>
-            <h1 className={headerClasses.headerTitle}>Welcome to KitchenMP</h1>
+            <h1 className={headerClasses.headerTitle}>
+              <div className={headerClasses.headerTitleFirstRow}>
+                Welcome to
+              </div>
+              <div>KitchenMP</div>
+            </h1>
             <p className={headerClasses.headerDescription}>
               Newly established restaurant in Pleven. We offer a diverse
               selection of delicious dishes, crafted to satisfy every palate.
