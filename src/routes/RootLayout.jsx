@@ -12,7 +12,6 @@ export default function RootLayout() {
       <MenuBar />
       <div onClick={() => dispatch(menuActions.hideMenu())}>
         <Outlet />
-        <Footer />
       </div>
     </>
   );

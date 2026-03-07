@@ -86,7 +86,7 @@ export default function MenuBar() {
               </NavLink>
             </li>
           </p>
-        </ul>
+        </ul>,
       );
     }
 
