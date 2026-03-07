@@ -38,12 +38,12 @@ export default function MenuBar() {
             <li>
               <NavLink
                 onClick={handleOpenMenu}
-                to="/about-us"
+                to="/home"
                 className={({ isActive }) =>
                   isActive ? classes.listActive : classes.list
                 }
               >
-                About us
+                Home
               </NavLink>
             </li>
           </p>
@@ -123,9 +123,9 @@ export default function MenuBar() {
                   className={({ isActive }) =>
                     isActive ? classes.listActive : classes.list
                   }
-                  to="/about-us"
+                  to="/home"
                 >
-                  About us
+                  Home
                 </NavLink>
               </li>
 

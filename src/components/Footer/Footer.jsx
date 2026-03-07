@@ -19,9 +19,9 @@ export default function Footer() {
               className={({ isActive }) =>
                 isActive ? classes.listActive : classes.list
               }
-              to="/about-us"
+              to="/home"
             >
-              About Us
+              Home
             </NavLink>
           </li>
           <li className={classes.listItemBrowse}>

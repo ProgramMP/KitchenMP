@@ -18,7 +18,7 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/about-us" />,
+    element: <Navigate to="/home" />,
   },
   {
     path: "/",
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/about-us",
+        path: "/home",
         element: <MainPage />,
       },
       {
@@ -50,5 +50,5 @@ createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </StrictMode>
+  </StrictMode>,
 );
