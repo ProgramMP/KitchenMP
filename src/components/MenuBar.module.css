@@ -148,7 +148,7 @@
     margin-top: 4.35rem;
     padding-left: 1rem;
     list-style: none;
-    background-color: rgba(248, 248, 248, 0.59);
+    background-color: rgb(248, 248, 248);
     padding-right: 70px;
     border-radius: 0px 0px 10px 10px;
     left: 0;
@@ -249,5 +249,22 @@
     display: grid;
     margin-top: 4.35rem;
     width: 30%;
+  }
+  .list {
+    right: 0.75rem;
+  }
+
+  .listActive {
+    right: 0.75rem;
+  }
+}
+
+@media (max-width: 230px) {
+  .list {
+    right: 1.5rem;
+  }
+
+  .listActive {
+    right: 1.5rem;
   }
 }
