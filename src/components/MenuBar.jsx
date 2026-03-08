@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { menuActions } from "../Store/Sandwich";
-import logo from "../assets/KitchenLogo1.jpg";
+import logo from "../assets/KitchenLogo1.png";
 import classes from "./MenuBar.module.css";
 
 export default function MenuBar() {
@@ -21,7 +21,7 @@ export default function MenuBar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 900) {
+      if (window.innerWidth > 780) {
         dispatch(menuActions.hideMenu());
       }
     };
