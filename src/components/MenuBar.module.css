@@ -1,6 +1,6 @@
 .main {
-  background-color: rgba(248, 248, 248, 0.59);
-  height: 70px;
+  background-color: rgba(248, 248, 248);
+  height: 84px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -132,7 +132,7 @@
   .main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    background-color: rgba(248, 248, 248, 0.59);
+    background-color: rgba(248, 248, 248);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -148,7 +148,7 @@
     margin-top: 4.35rem;
     padding-left: 1rem;
     list-style: none;
-    background-color: rgb(248, 248, 248);
+    background-color: rgba(248, 248, 248);
     padding-right: 70px;
     border-radius: 0px 0px 10px 10px;
     left: 0;
