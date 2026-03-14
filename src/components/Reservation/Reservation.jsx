@@ -139,33 +139,7 @@ export default function Reservation() {
     people.current.value = "";
     time.current.value = "";
     comment.current.value = "";
-  }
-
-  let actions = (
-    <>
-      <button className={classes.button}>Book a table</button>
-    </>
-  );
-
-  if (isSending) {
-    actions = <span className={classes.fetch}>Sending order data...</span>;
-  }
-  if (error) {
-    actions = (
-      <div className={classes.fetch}>
-        <ErrorBlock title="Failed to submit order" message={error} />
-        <button className={classes.button}>Try Again</button>
-      </div>
-    );
-  }
-
-  if (data && !error) {
-    actions = (
-      <>
-        <span className={classes.fetch}>Success!</span>;
-        <button className={classes.button}>Book a table</button>
-      </>
-    );
+    setSelectedTime("");
   }
 
   return (
@@ -412,7 +386,6 @@ export default function Reservation() {
                   />
                   <button type="submit" className={classes.submitButton}>
                     <span>Try Again</span>
-                    <span className={classes.arrow}>→</span>
                   </button>
                 </div>
               ) : data && !error ? (
@@ -422,7 +395,6 @@ export default function Reservation() {
                   </span>
                   <button type="submit" className={classes.submitButton}>
                     <span>Book Another Table</span>
-                    <span className={classes.arrow}>→</span>
                   </button>
                 </div>
               ) : (
