@@ -1,3 +1,8 @@
+.menu {
+  margin-top: 200px;
+  position: relative;
+}
+
 .meals {
   width: 90%;
   max-width: 70rem;

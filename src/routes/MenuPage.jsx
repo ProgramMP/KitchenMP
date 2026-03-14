@@ -9,12 +9,7 @@ export default function MenuPage() {
   window.scrollTo(0, 0);
   return (
     <>
-      <div>
-        <CartButton />
-        <Menu />
-        <Cart />
-        <Checkout />
-      </div>
+      <Menu />
       <Footer />
     </>
   );
