@@ -97,6 +97,9 @@ app.post("/reservations", async (req, res) => {
     reservationData.customer.lastName.trim() === "" ||
     reservationData.customer.email === null ||
     !reservationData.customer.email.includes("@") ||
+    reservationData.customer.phone === null ||
+    reservationData.customer.phone.trim() === "" ||
+    !reservationData.customer.phone.startsWith("+359") ||
     reservationData.customer.date === "" ||
     reservationData.customer.people === "" ||
     reservationData.customer.people === null ||
@@ -104,7 +107,16 @@ app.post("/reservations", async (req, res) => {
     reservationData.customer.time === null
   ) {
     return res.status(400).json({
-      message: "Missing data: Email, name, date, people or time is missing.",
+      message:
+        "Missing data: Email, name, phone number (+359 format), date, people or time is missing.",
+    });
+  }
+
+  const phoneDigits = reservationData.customer.phone.replace(/\D/g, "");
+  if (phoneDigits.length !== 11 || !phoneDigits.startsWith("359")) {
+    return res.status(400).json({
+      message:
+        "Invalid phone number. Please use Bulgarian format: +359 XX XXX XXX",
     });
   }
 
@@ -118,7 +130,7 @@ app.post("/reservations", async (req, res) => {
   allreservations.push(newreservation);
   await fs.writeFile(
     "./data/reservations.json",
-    JSON.stringify(allreservations)
+    JSON.stringify(allreservations),
   );
   res.status(201).json({ message: "Reservation created!" });
 });

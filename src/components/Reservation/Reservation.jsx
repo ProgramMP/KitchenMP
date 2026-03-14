@@ -40,6 +40,7 @@ export default function Reservation() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("+359 ");
 
   const {
     data,
@@ -117,8 +118,48 @@ export default function Reservation() {
     return date1.toDateString() === date2.toDateString();
   };
 
+  const formatPhoneNumber = (value) => {
+    let digits = value.replace(/\D/g, "");
+
+    if (digits.length >= 6) {
+      return `+359 ${digits.slice(0, 2)} ${digits.slice(2, 5)} ${digits.slice(5, 9)}`;
+    } else if (digits.length >= 3) {
+      return `+359 ${digits.slice(0, 2)} ${digits.slice(2)}`;
+    } else if (digits.length > 0) {
+      return `+359 ${digits}`;
+    } else {
+      return "+359 ";
+    }
+  };
+
+  const handlePhoneChange = (event) => {
+    let input = event.target.value;
+
+    if (!input.startsWith("+359")) {
+      input = "+359 " + input.replace(/^\+359\s*/, "");
+    }
+
+    const digitsAfter359 = input.slice(4).replace(/\D/g, "");
+    const formatted = formatPhoneNumber(digitsAfter359);
+
+    setPhoneNumber(formatted);
+    if (phone.current) {
+      phone.current.value = formatted;
+    }
+  };
+
+  const validatePhoneNumber = (phoneNumber) => {
+    const digitsOnly = phoneNumber.replace(/\D/g, "");
+    return phoneNumber.startsWith("+359") && digitsOnly.length === 12;
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (!validatePhoneNumber(phoneNumber)) {
+      alert("Please enter a valid phone number (+359 XX XXX XXX).");
+      return;
+    }
 
     const fd = new FormData(event.target);
     const customerData = Object.fromEntries(fd.entries());
@@ -140,6 +181,7 @@ export default function Reservation() {
     time.current.value = "";
     comment.current.value = "";
     setSelectedTime("");
+    setPhoneNumber("+359 ");
   }
 
   return (
@@ -358,7 +400,10 @@ export default function Reservation() {
                     name="phone"
                     ref={phone}
                     className={classes.input}
-                    placeholder="+359"
+                    placeholder="+359 XX XXX XXX"
+                    value={phoneNumber}
+                    onChange={handlePhoneChange}
+                    maxLength="16"
                     required
                   />
                 </div>
