@@ -1,275 +1,467 @@
-.h1 {
+.hero {
+  min-height: 400px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: 70px;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
+  padding: 1rem;
+  margin-top: 84px;
 }
 
-.fetch {
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.heroTitle {
   color: white;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  text-align: center;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  margin: 0;
 }
 
-.main {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 700px;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-  border: 1px solid #000000;
-  margin-bottom: 7rem;
-  border-radius: 1rem;
-  .form {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0rem, 1fr));
-    justify-items: center;
+.heroDescription {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.125rem;
+  font-weight: 300;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
-    p {
-      label {
-        width: 10rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-        display: flex;
-      }
+.formContainer {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  margin-top: -4rem;
+  position: relative;
+  z-index: 10;
+}
 
-      input,
-      select {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 1.3rem 1.2rem 1.3rem !important;
-        border-radius: 4px;
-        border: 1px solid #000000;
-        font-family: Futura, sans-serif;
-        background-color: transparent;
-        font-size: 16px;
-        margin-bottom: 1rem;
-        color: #000000;
-        width: 15rem;
-        -ms-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        -webkit-box-sizing: content-box;
-        box-sizing: content-box;
-      }
-    }
-  }
-  .comments {
-    margin-left: 35px;
+.formCard {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  border: 1px solid rgba(24, 17, 18, 0.05);
+}
 
-    label {
-      display: flex;
-      margin-right: auto;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-  }
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  color: #181112;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.partySizeContainer {
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: #f8f6f6;
+  gap: 0;
+}
+
+.partySizeOption {
+  display: flex;
+  cursor: pointer;
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  color: rgba(24, 17, 18, 0.6);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+
+.partySizeOption:hover {
+  background-color: rgba(248, 246, 246, 0.8);
+  color: rgba(24, 17, 18, 0.8);
+}
+
+.partySizeOption:has(input:checked) {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #181112;
+  font-weight: 700;
+  border: 2px solid #181112;
+}
+
+.radioInput {
+  display: none;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.dateSection {
+  border: 1px solid rgba(24, 17, 18, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background-color: rgba(248, 246, 246, 0.3);
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.calendarNav {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #181112;
+  font-size: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendarNav:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.calendarMonth {
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #181112;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.dayHeader {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: rgba(24, 17, 18, 0.4);
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+.calendarDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.calendarDay {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #181112;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.calendarDay:hover:not(.disabled):not(.otherMonth) {
+  background-color: #f0f0f0;
+}
+
+.calendarDay.selected {
+  background-color: #181112;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.calendarDay.selected:hover {
+  background-color: #000000ab;
+}
+
+.calendarDay.disabled {
+  color: rgba(24, 17, 18, 0.2);
+  cursor: not-allowed;
+}
+
+.calendarDay.disabled:hover {
+  background: none;
+}
+
+.calendarDay.otherMonth {
+  color: rgba(24, 17, 18, 0.3);
+}
+
+.hiddenDateInput {
+  display: none;
+}
+
+.timeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.timeButton {
+  height: 3rem;
+  border: 1px solid rgba(24, 17, 18, 0.1);
+  border-radius: 0.5rem;
+  background: white;
+  color: #181112;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeButton:hover {
+  border-color: #181112;
+  color: #181112;
+  background-color: #f0f0f0;
+}
+
+.timeSelected {
+  border-color: #181112 !important;
+  background: #181112;
+  color: white !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.timeSelected:hover {
+  background-color: #000000 !important;
+  transform: translateY(-1px);
+}
+
+.timeNote {
+  color: rgba(24, 17, 18, 0.5);
+  font-size: 0.6875rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.contactSection {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(24, 17, 18, 0.05);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.inputLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(24, 17, 18, 0.6);
+}
+
+.input {
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(24, 17, 18, 0.1);
+  background-color: #f8f6f6;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #181112;
+  box-shadow: 0 0 0 3px rgba(24, 17, 18, 0.1);
+  background-color: white;
 }
 
 .textarea {
-  display: flex;
-  height: 130px;
-  width: 623px;
-  border-radius: 4px;
-  border: 1px solid #000000;
-  font-family: Futura, sans-serif;
-  background-color: transparent;
-  font-size: 16px;
-  margin-bottom: 3rem;
-  color: #000000;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(24, 17, 18, 0.1);
+  background-color: #f8f6f6;
+  padding: 1rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: none;
+  transition: all 0.2s;
+  width: 100% !important;
+  box-sizing: border-box;
 }
 
-.button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.submitSection {
+  margin-top: 3rem;
+}
 
-  cursor: pointer;
-  font-weight: bold;
+.submitButton {
+  width: 100%;
+  background-color: #181112ef;
+  color: white;
+  height: 4rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
   text-transform: uppercase;
-  background-color: rgb(0, 0, 0);
+  letter-spacing: 0.1em;
   border: none;
-  color: rgb(255, 255, 255);
-  padding: 1rem 3rem;
-  border-radius: 4px;
-}
-.button:hover,
-.button:active {
-  background-color: rgb(255, 255, 255);
-  border-color: gray;
-  color: rgb(0, 0, 0);
-  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
 }
 
-@media (min-width: 600px) and (max-width: 800px) {
-  .h1 {
-    text-align: center;
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
-  }
-
-  .main {
-    width: 500px;
-
-    .form {
-      p {
-        label {
-          width: 10rem;
-          font-weight: bold;
-          margin-bottom: 0.5rem;
-        }
-
-        input,
-        select {
-          padding: 1rem 1rem 1rem !important;
-
-          width: 150px;
-        }
-      }
-    }
-    .textarea {
-      width: 425px;
-    }
-
-    .comments {
-      margin-left: 34px;
-    }
-  }
+.submitButton:hover {
+  background-color: #000000;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
 }
 
-@media (min-width: 430px) and (max-width: 599px) {
-  .h1 {
-    text-align: center;
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
+.disclaimer {
+  text-align: center;
+  color: rgba(24, 17, 18, 0.4);
+  font-size: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.fetch {
+  text-align: center;
+  color: #181112;
+  font-size: 1.125rem;
+  margin: 2rem 0;
+}
+
+.errorSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.successSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.successMessage {
+  color: #181112;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+@media (max-width: 590px) {
+  .formCard {
+    padding: 1.5rem;
   }
 
-  .main {
-    width: 400px;
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-    .form {
-      p {
-        label {
-          font-size: 13px;
-        }
+  .partySizeContainer {
+    height: auto;
+    flex-direction: column;
+    width: 100%;
+    padding: 0rem;
+  }
 
-        input,
-        select {
-          padding: 0.5rem 0.5rem 0.5rem !important;
-          font-size: 13px;
-          width: 150px;
-        }
-      }
-    }
-    .textarea {
-      width: 360px;
-      font-size: 13px;
-    }
+  .partySizeOption {
+    width: 100%;
+    height: 2.5rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
 
-    .comments {
-      font-size: 13px;
-      margin-left: 17px;
-      margin-right: 17px;
-    }
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .timeGrid {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 320px) and (max-width: 429px) {
-  .h1 {
-    text-align: center;
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 1.5rem 1rem;
+    margin-top: -2rem;
   }
 
-  .main {
-    width: 300px;
-
-    .form {
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0rem, 1fr));
-      justify-items: start;
-      margin-left: 20px;
-      p {
-        label {
-          width: 100%;
-          font-size: 13px;
-        }
-
-        input,
-        select {
-          padding: 0.5rem 0.5rem 0.5rem !important;
-          font-size: 13px;
-          width: 192px;
-          margin-bottom: 0rem;
-        }
-      }
-    }
-    .textarea {
-      width: 204px;
-      font-size: 13px;
-    }
-
-    .comments {
-      margin-left: 20px;
-      font-size: 13px;
-    }
-  }
-  .button {
-    padding: 0.5rem 1.5rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .h1 {
-    font-size: 30px;
-    margin-bottom: 5rem;
-    margin-top: 2rem;
+  .hero {
+    min-height: 300px;
   }
 
-  .main {
-    width: 250px;
-
-    .form {
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0rem, 1fr));
-      justify-items: start;
-      margin-left: 20px;
-      p {
-        label {
-          width: 100%;
-          font-size: 13px;
-        }
-
-        input,
-        select {
-          padding: 0.5rem 0.5rem 0.5rem !important;
-          font-size: 13px;
-          width: 192px;
-          margin-bottom: 0rem;
-        }
-      }
-    }
-    .textarea {
-      width: 204px;
-      font-size: 13px;
-    }
-
-    .comments {
-      margin-left: 20px;
-      font-size: 13px;
-    }
+  .heroDescription {
+    font-size: 1rem;
   }
-  .button {
-    padding: 0.5rem 1.5rem;
+
+  .submitButton {
+    height: 3.5rem;
+    font-size: 1rem;
   }
 }
