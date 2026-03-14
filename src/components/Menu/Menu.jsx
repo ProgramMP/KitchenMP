@@ -15,22 +15,20 @@ export default function Menu() {
     error,
   } = useHttp("https://backend-kitchen.onrender.com/meals", requestConfig, []);
 
-  if (isLoading) {
-    return <p className={classes.fetch}>Fetching meals...</p>;
-  }
-
-  if (error) {
-    return <ErrorBlock title="Failed to fetch meals" message={error} />;
-  }
-
   return (
     <div className={classes.menu}>
       <CartButton />
-      <div className={classes.meals}>
-        {loadedMeals.map((meals) => (
-          <MenuItems key={meals.id} meal={meals}></MenuItems>
-        ))}
-      </div>
+      {isLoading ? (
+        <p className={classes.fetch}>Fetching meals...</p>
+      ) : error ? (
+        <ErrorBlock title="Failed to fetch meals" message={error} />
+      ) : (
+        <div className={classes.meals}>
+          {loadedMeals.map((meals) => (
+            <MenuItems key={meals.id} meal={meals}></MenuItems>
+          ))}
+        </div>
+      )}
       <Cart />
       <Checkout />
     </div>
