@@ -122,9 +122,9 @@ export default function Reservation() {
     let digits = value.replace(/\D/g, "");
 
     if (digits.length >= 6) {
-      return `+359 ${digits.slice(0, 2)} ${digits.slice(2, 5)} ${digits.slice(5, 9)}`;
+      return `+359 ${digits.slice(0, 3)} ${digits.slice(3, 6)} ${digits.slice(6, 9)}`;
     } else if (digits.length >= 3) {
-      return `+359 ${digits.slice(0, 2)} ${digits.slice(2)}`;
+      return `+359 ${digits.slice(0, 3)} ${digits.slice(3)}`;
     } else if (digits.length > 0) {
       return `+359 ${digits}`;
     } else {
@@ -172,7 +172,7 @@ export default function Reservation() {
       return;
     }
     if (!validatePhoneNumber(phoneNumber)) {
-      alert("Please enter a valid phone number (+359 XX XXX XXX).");
+      alert("Please enter a valid phone number (+359 XXX XXX XXX).");
       return;
     }
 
@@ -419,12 +419,12 @@ export default function Reservation() {
                     name="phone"
                     ref={phone}
                     className={classes.input}
-                    placeholder="+359 XX XXX XXX"
+                    placeholder="+359 XXX XXX XXX"
                     value={phoneNumber}
                     onChange={handlePhoneChange}
                     maxLength="16"
-                    pattern="\+359 \d{2} \d{3} \d{3}"
-                    title="Please enter a valid phone number (+359 XX XXX XXX)"
+                    pattern="\+359 \d{3} \d{3} \d{3}"
+                    title="Please enter a valid phone number (+359 XXX XXX XXX)"
                     required
                   />
                 </div>

@@ -113,10 +113,10 @@ app.post("/reservations", async (req, res) => {
   }
 
   const phoneDigits = reservationData.customer.phone.replace(/\D/g, "");
-  if (phoneDigits.length !== 11 || !phoneDigits.startsWith("359")) {
+  if (phoneDigits.length !== 12 || !phoneDigits.startsWith("359")) {
     return res.status(400).json({
       message:
-        "Invalid phone number. Please use Bulgarian format: +359 XX XXX XXX",
+        "Invalid phone number. Please use Bulgarian format: +359 XXX XXX XXX",
     });
   }
 
