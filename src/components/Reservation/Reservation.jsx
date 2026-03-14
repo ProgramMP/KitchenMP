@@ -152,10 +152,25 @@ export default function Reservation() {
     const digitsOnly = phoneNumber.replace(/\D/g, "");
     return phoneNumber.startsWith("+359") && digitsOnly.length === 12;
   };
-
+  const validateName = (name) => {
+    return name && name.trim().length > 0 && /^[A-Z]/.test(name.trim());
+  };
   function handleSubmit(event) {
     event.preventDefault();
+    const firstNameValue = firstName.current.value;
+    const lastNameValue = lastName.current.value;
 
+    if (!validateName(firstNameValue)) {
+      alert("First name is required and must start with an uppercase letter.");
+      firstName.current.focus();
+      return;
+    }
+
+    if (!validateName(lastNameValue)) {
+      alert("Last name is required and must start with an uppercase letter.");
+      lastName.current.focus();
+      return;
+    }
     if (!validatePhoneNumber(phoneNumber)) {
       alert("Please enter a valid phone number (+359 XX XXX XXX).");
       return;
@@ -368,6 +383,8 @@ export default function Reservation() {
                     ref={firstName}
                     className={classes.input}
                     placeholder="John"
+                    pattern="[A-Z][a-zA-Z]*"
+                    title="First name must start with an uppercase letter"
                     required
                   />
                 </div>
@@ -379,6 +396,8 @@ export default function Reservation() {
                     ref={lastName}
                     className={classes.input}
                     placeholder="Doe"
+                    pattern="[A-Z][a-zA-Z]*"
+                    title="Last name must start with an uppercase letter"
                     required
                   />
                 </div>
@@ -404,6 +423,8 @@ export default function Reservation() {
                     value={phoneNumber}
                     onChange={handlePhoneChange}
                     maxLength="16"
+                    pattern="\+359 \d{2} \d{3} \d{3}"
+                    title="Please enter a valid phone number (+359 XX XXX XXX)"
                     required
                   />
                 </div>
