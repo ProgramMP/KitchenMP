@@ -66,12 +66,29 @@ app.post("/contacts", async (req, res) => {
     !contactData.customer.email.includes("@") ||
     contactData.customer.name === null ||
     contactData.customer.name.trim() === "" ||
+    contactData.customer.subject === null ||
+    contactData.customer.subject.trim() === "" ||
     contactData.customer.message === null ||
     contactData.customer.message.trim() === ""
   ) {
     return res.status(400).json({
-      message: "Missing data: Email, name or message is missing.",
+      message: "Missing data: Email, name, subject or message is missing.",
     });
+  }
+
+  const names = contactData.customer.name.trim().split(/\s+/);
+  if (names.length !== 2) {
+    return res.status(400).json({
+      message: "Please enter exactly two names (First Name Last Name)",
+    });
+  }
+
+  for (const name of names) {
+    if (name[0] !== name[0].toUpperCase()) {
+      return res.status(400).json({
+        message: "Both names must start with uppercase letters",
+      });
+    }
   }
 
   const newcontact = {
