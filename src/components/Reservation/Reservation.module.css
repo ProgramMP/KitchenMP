@@ -383,12 +383,12 @@
 }
 
 .fetch {
+  display: block;
   text-align: center;
   color: #181112;
   font-size: 1.125rem;
   margin: 2rem 0;
-  align-items: center;
-  text-align: center;
+  width: 100%;
 }
 
 .errorSection {
