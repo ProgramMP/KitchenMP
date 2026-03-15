@@ -12,7 +12,7 @@
 
   .button:hover,
   .button:active {
-    background-color: #000000;
+    background-color: #333333;
     border-color: gray;
     color: #ffffff;
     transition: all 0.4s ease-in-out;
