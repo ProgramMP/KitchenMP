@@ -248,7 +248,7 @@
 }
 
 .icon {
-  font-size: 1.5rem;
+  max-width: 1.5rem;
 }
 
 .contactLabel {

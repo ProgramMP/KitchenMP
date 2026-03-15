@@ -1,4 +1,7 @@
 import { useRef, useState } from "react";
+import mail from "../../assets/mail.png";
+import phone from "../../assets/telephone.png";
+import location from "../../assets/location.png";
 import useHttp from "../../hooks/useHttp";
 import ErrorBlock from "../UI/ErrorBlock";
 import classes from "./Contact.module.css";
@@ -187,7 +190,11 @@ export default function Contact() {
               <div className={classes.contactInfo}>
                 <div className={classes.contactItem}>
                   <div className={classes.contactIcon}>
-                    <span className={classes.icon}>📍</span>
+                    <img
+                      className={classes.icon}
+                      src={location}
+                      alt="Location Icon"
+                    />
                   </div>
                   <div className={classes.contactTextContainer}>
                     <h4 className={classes.contactLabel}>Visit Us</h4>
@@ -197,7 +204,11 @@ export default function Contact() {
 
                 <div className={classes.contactItem}>
                   <div className={classes.contactIcon}>
-                    <span className={classes.icon}>📞</span>
+                    <img
+                      className={classes.icon}
+                      src={phone}
+                      alt="Phone Icon"
+                    />
                   </div>
                   <div className={classes.contactTextContainer}>
                     <h4 className={classes.contactLabel}>Call Us</h4>
@@ -209,7 +220,7 @@ export default function Contact() {
 
                 <div className={classes.contactItem}>
                   <div className={classes.contactIcon}>
-                    <span className={classes.icon}>✉️</span>
+                    <img className={classes.icon} src={mail} alt="Email Icon" />
                   </div>
                   <div className={classes.contactTextContainer}>
                     <h4 className={classes.contactLabel}>Email Us</h4>
