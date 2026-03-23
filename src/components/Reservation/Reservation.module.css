@@ -202,7 +202,7 @@
   position: relative;
 }
 
-.calendarDay:hover:not(.disabled):not(.otherMonth) {
+.calendarDay:hover:not(.disabled):not(.otherMonth):not(.selected) {
   background-color: #f0f0f0;
 }
 
@@ -211,10 +211,6 @@
   color: white;
   font-weight: 700;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.calendarDay.selected:hover {
-  background-color: #000000ab;
 }
 
 .calendarDay.disabled {
