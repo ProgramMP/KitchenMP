@@ -2,17 +2,38 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   padding: 2rem 2rem;
-  background-color: #1a1a1a;
+  background-color: rgba(248, 248, 248);
+  border-bottom: 1px solid rgb(115, 115, 115);
+}
+
+.copyRight {
+  display: flex;
+  padding: 1rem 7rem;
+  background-color: rgba(248, 248, 248);
+  color: rgb(115, 115, 115);
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.privacy {
+  margin-left: auto;
+  color: rgb(115, 115, 115);
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .header {
   font-size: 24px;
   font-weight: bold;
+  color: black;
 }
 
 .icons {
   width: 1.2rem;
   height: 1.2rem;
+  filter: brightness(0);
 }
 
 .img {
@@ -21,6 +42,7 @@
   width: 10rem;
   height: 8rem;
   object-fit: contain;
+  filter: brightness(0);
 }
 
 .browse {
@@ -41,14 +63,14 @@
 
 .listItemContact {
   margin-bottom: 15px;
-  color: rgb(194, 194, 194);
+  color: rgb(115, 115, 115);
   font-family:
     "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .list {
-  color: rgb(194, 194, 194);
+  color: rgb(115, 115, 115);
   text-decoration: none;
   font-size: 15px;
   text-transform: uppercase;
@@ -59,11 +81,11 @@
 
 .list:hover,
 .list:active {
-  color: gray;
+  color: black;
 }
 
 .listActive {
-  color: gray;
+  color: black;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
@@ -74,6 +96,9 @@
 }
 
 @media (min-width: 701px) and (max-width: 1000px) {
+  .copyRight {
+    padding: 1rem;
+  }
   .img {
     padding: 0;
   }
@@ -87,6 +112,10 @@
   }
 }
 @media (min-width: 501px) and (max-width: 700px) {
+  .copyRight {
+    padding: 1rem;
+  }
+
   .footer {
     grid-template-columns: repeat(2, 200px);
     justify-content: center;
@@ -94,6 +123,7 @@
   .header {
     font-size: 18px;
     font-weight: bold;
+    color: black;
   }
 
   .logo {
@@ -114,16 +144,17 @@
 
   .list:hover,
   .list:active {
-    color: gray;
+    color: black;
   }
 
   .listActive {
+    color: black;
     font-size: 13px;
   }
 
   .listItemContact {
     margin-bottom: 15px;
-    color: rgb(194, 194, 194);
+    color: rgb(115, 115, 115);
     font-size: 13px;
   }
   .icons {
@@ -133,6 +164,16 @@
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
+  .copyRight {
+    flex-direction: column;
+    padding: 0rem;
+    align-items: center;
+  }
+
+  .privacy {
+    margin-left: 0;
+  }
+
   .footer {
     grid-template-columns: repeat(1, 230px);
     justify-content: center;
@@ -145,6 +186,7 @@
   .header {
     font-size: 24px;
     font-weight: bold;
+    color: black;
   }
 
   .logo {
@@ -153,14 +195,16 @@
 
   .browse {
     margin-left: 0rem;
+    text-align: center;
   }
 
   .contact {
     margin-left: 0rem;
+    text-align: center;
   }
 
   .list {
-    color: rgb(194, 194, 194);
+    color: rgb(115, 115, 115);
     text-decoration: none;
     font-size: 15px;
     text-transform: uppercase;
@@ -171,11 +215,11 @@
 
   .list:hover,
   .list:active {
-    color: gray;
+    color: black;
   }
 
   .listActive {
-    color: gray;
+    color: black;
     text-align: center;
     text-decoration: none;
     font-size: 15px;
@@ -187,7 +231,7 @@
 
   .listItemContact {
     margin-bottom: 15px;
-    color: rgb(194, 194, 194);
+    color: rgb(115, 115, 115);
     font-size: 15px;
   }
   .icons {
@@ -197,6 +241,16 @@
 }
 
 @media (max-width: 319px) {
+  .copyRight {
+    flex-direction: column;
+    padding: 0rem;
+    align-items: center;
+  }
+
+  .privacy {
+    margin-left: 0;
+  }
+
   .footer {
     grid-template-columns: repeat(1, 230px);
     justify-content: center;
@@ -209,6 +263,7 @@
   .header {
     font-size: 24px;
     font-weight: bold;
+    color: black;
   }
 
   .logo {
@@ -217,14 +272,16 @@
 
   .browse {
     margin-left: 0rem;
+    text-align: center;
   }
 
   .contact {
     margin-left: 0rem;
+    text-align: center;
   }
 
   .list {
-    color: rgb(194, 194, 194);
+    color: rgb(115, 115, 115);
     text-decoration: none;
     font-size: 80%;
     text-transform: uppercase;
@@ -235,11 +292,11 @@
 
   .list:hover,
   .list:active {
-    color: gray;
+    color: black;
   }
 
   .listActive {
-    color: gray;
+    color: black;
     text-align: center;
     text-decoration: none;
     font-size: 80%;
@@ -251,7 +308,7 @@
 
   .listItemContact {
     margin-bottom: 15px;
-    color: rgb(194, 194, 194);
+    color: rgb(115, 115, 115);
     font-size: 80%;
   }
   .icons {
