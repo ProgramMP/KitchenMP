@@ -310,7 +310,8 @@ export default function Reservation() {
                         className={`${classes.calendarDay} ${
                           day.isOtherMonth ? classes.otherMonth : ""
                         } ${
-                          isSameDay(day.fullDate, selectedDate)
+                          isSameDay(day.fullDate, selectedDate) &&
+                          !day.isOtherMonth
                             ? classes.selected
                             : ""
                         }`}
