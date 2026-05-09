@@ -62,7 +62,7 @@ export default function Reservation() {
 
     const days = [];
 
-    const prevMonth = new Date(year, month - 1, 0);
+    const prevMonth = new Date(year, month, 0);
     for (let i = startingDayOfWeek - 1; i >= 0; i--) {
       days.push({
         date: prevMonth.getDate() - i,
